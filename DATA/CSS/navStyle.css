@@ -1,37 +1,5 @@
 /* CSS Document */
-html
-{
-	margin:0;
-	font-family: 'Libre Baskerville', serif;
-}
-body
-{
-	border:medium black solid;
-	background:#D6D6D6;
-	top:-4px;
-	min-width:1500px;
-	margin:0
-}
-#header
-{
-	background:#222;
-	color:white;
-	padding:5px;
-	text-align:center;
-	margin-bottom:0;
-	font-size:26pt;
-}
-#main 
-{
-	display:block;
-	width:80%;
-	margin-left:auto;
-	margin-right:auto;
-	margin-bottom:20px;
-	background:white;
-	border:black solid medium;
-	border-radius:10px;
-}
+
 .nav_link
 {
 	list-style:none;
@@ -59,7 +27,7 @@ nav a
 	display:block;
 	width:100%;
 }
-a:visited
+nav a:visited
 {
 	text-decoration:none;
 	color:white;
@@ -165,8 +133,4 @@ nav span
 	right:85px;	
 	float:right;
 	top:5px;
-}
-#section p
-{
-	font-size:18px
 }
