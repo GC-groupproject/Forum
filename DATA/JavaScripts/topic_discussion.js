@@ -1,13 +1,14 @@
 $(window).load(function(e) {
     $(".replyButton").click(function(e) {		
         e.preventDefault();
-		var $this = $(this);
 		$(".writtingBox").remove();
-		var topicID = $(this).attr('id');
+		var $this = $(this);
+		var topic = $this.attr('topic');
+		var page = $this.attr('page');
         $.ajax({
             type: "POST",
             url: 'DATA/replyBox.php',
-            data: {'topicID':topicID},
+            data: {topicID:topic, endPage:page},
 			dataType:"html",
             success: function(data)
             {

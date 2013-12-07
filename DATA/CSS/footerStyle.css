@@ -1,0 +1,23 @@
+/* CSS Document */
+footer
+{
+	background: #222;
+	color:white;
+	margin-bottom:0;
+	padding:0;
+	border-top-left-radius:75px 5px;
+	border-top-right-radius:75px 5px;
+	position:fixed;
+	bottom:0px;
+	width:100%;
+}
+footer p
+{
+	margin:0;
+	padding:10px;
+}
+footer a, footer a:visited
+{
+	float:right;
+	color:white;
+}
