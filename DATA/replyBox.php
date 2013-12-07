@@ -5,7 +5,7 @@
 ?>
 <div class="writtingBox">
 	<form action="<?php echo URL . "topic_discussion.php?topic=" . $topicID . '&page=' . $endPage; ?>" method="post">
-    	<textarea name="response" required="required" spellcheck="true" placeholder="Type response here" maxLength="5000"></textarea>
         <input type="submit" name="submit" value="Submit" class="button submit" />
+    	<textarea name="response" required="required" spellcheck="true" placeholder="Type response here" maxLength="5000"></textarea>
     </form>
 </div>

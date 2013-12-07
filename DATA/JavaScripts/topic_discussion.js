@@ -13,6 +13,7 @@ $(window).load(function(e) {
             success: function(data)
             {
                 $this.parent(".topic").after(data);
+				$('.writtingBox textarea').focus();
             },
 			failure: function()
 			{

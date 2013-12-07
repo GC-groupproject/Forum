@@ -13,6 +13,13 @@
       </style>
     <![endif]-->
 <?php
+	if($mobile)
+	{
+		?>
+        	<link href="DATA/CSS/mobilePost.css" rel="stylesheet" type="text/css"/>
+            <script type="text/javascript" src="DATA/JavaScripts/mobileTopic.js"></script>
+        <?php
+	}
 	include("DATA/header_close.php");
 	// header closed
 	
@@ -29,8 +36,9 @@
 	
 	if(isset($_POST['response']))
 	{
+		include('DATA/parseText.php');
 		$userID 		= isset($_SESSION['userID'])? $_SESSION['userID'] : ANONUSER;
-		$text 			=  str_replace("\n","<br>",$_POST['response']);
+		$text 			=  parseText($_POST['response']);
 		
 		
 		$query = "INSERT INTO forum_posts(title_id, user_id, post_text, post_time) VALUES(" 
@@ -43,10 +51,9 @@
 			
 		$result = $db->prepare($query);
 		$result->execute();
-		
 		$query = "UPDATE forum_titles SET last_user_id = '$userID', last_post_date = NOW() WHERE title_id = '$topicID'";
 			
-		echo $query;
+		
 		$result = $db->prepare($query);
 		$result->execute();
 	}
@@ -67,14 +74,12 @@
 			$curPage = $pages;
 		}
 		
-		$limitSet 		= $curPage == 1? 10 : 10 * ($curPage-1);
-		$limitsetEnd = $limitSet + 10;
-		$limitStatement = $curPage > 1? ("$limitSet , $limitsetEnd") : $limitSet;
+		$limitset 		= $curPage == 1? 10 : 10 * ($curPage-1);
+		$limitStatement = $curPage > 1? ("$limitset , 10") : $limitset;
 		
 		$query = "SELECT * FROM forum_posts WHERE title_id = $topicID LIMIT $limitStatement";
 		$result = $db->prepare($query);
 		$result->execute();
-		
 		?>
         <h1 class="header">
 		<?php
@@ -101,7 +106,7 @@
 				?>                             
 				<div class="topic">
 					<button class="button replyButton" topic="<?php echo $topicID; ?>" page="<?php echo $pages; ?>">Post</button>
-                    <div>
+                    <div class='content_wrapper'>
                         <div class='user_image'>
                             <img src='<?php
                                 $query =  "SELECT user_image FROM forum_user_info WHERE user_id = ?";

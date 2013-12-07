@@ -11,4 +11,15 @@
         <!-- This website was Designed, developed, and coded by Jean-Luc Desroches and Alex Barbosa -->
         <?php 
 		include("DATA/GLOBALS.php");
+		include("DATA/Classes/checkMobile.php");
+		
+		$mobile = mobileCheck::checkBrowser();
+		if($mobile)
+		{
+	?>
+    		<link href="DATA/CSS/mobileNav.css" rel="stylesheet" type="text/css"/>
+            <link href="DATA/CSS/mobileFooter.css" rel="stylesheet" type="text/css"/>
+            <link href="DATA/CSS/mobileTheme.css" rel="stylesheet" type="text/css"/>
+    <?php 
+		} 
 	?>
