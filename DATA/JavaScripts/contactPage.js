@@ -2,10 +2,13 @@
 	Programmer: Durwin Barcenas
 	Date: December 13, 2013
 */
+//method to validate name to be prompted on the html contact page 
 function validateName()
 {
+	//variable name is set by element id contactName from the form
 	var name = document.getElementById("contactName").value; 
 	
+	//validation for name
 	if(name.length == 0)
 	{
 		producePrompt("Name is Required", "namePrompt", "red"); 
@@ -21,10 +24,13 @@ function validateName()
 	
 }
 
+//method to validate Phone to be prompted on the html contact page 
 function validatePhone()
 {
+//variable phone is set by element id contactPhone from the form
 	var phone = document.getElementById("contactPhone").value; 
 	
+	//validation for phone
 	if(phone.length == 0)
 	{
 		producePrompt("Phone Number is Required ", "phonePrompt", "red"); 
@@ -39,10 +45,13 @@ function validatePhone()
 	
 }
 
+//method to validate Email to be prompted on the html contact page 
 function validateEmail()
 {
+//variable email is set by element id contactEmail from the form
 	var email = document.getElementById("contactEmail").value; 
 	
+	//validation for email
 	if(email.length == 0)
 	{
 		producePrompt("Email is Required", "emailPrompt", "red"); 
@@ -56,10 +65,12 @@ function validateEmail()
 		return true; 
 }
 
+//method to validate Message to be prompted on the html contact page 
 function validateMessage()
 {
+//variable contactMessage is set by element id contactMessage from the form
 	var contactMessage = document.getElementById("contactMessage").value; 
-	
+	//validation for contactMessage
 	if(contactMessage.length == 0)
 	{
 		producePrompt("Message is Required", "messagePrompt", "red"); 
@@ -70,8 +81,8 @@ function validateMessage()
 
 }
 
-
-
+//this method is called to each validaiton funcitons
+//to set the prompt message, location and color
 function producePrompt(message, promptLocation, color)
 {
 	document.getElementById(promptLocation).innerHTML = message; 

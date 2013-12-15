@@ -45,7 +45,7 @@
 	$sql = "INSERT INTO forum_user_info (first_name, last_name, birthdate) VALUES
 		('$_POST[firstname]','$_POST[lastname]' , '$_POST[birthdate]')";
 	$sql1 = "INSERT INTO forum_users (user_name, user_password) VALUES
-		('$_POST[username]', '$password')";
+		('$_POST[username]', '$_POST[password]')";
 		
 		
 		//Run the sql
@@ -53,9 +53,14 @@
 	
 	mysqli_query($conn,$sql1);
 		mysqli_close($conn);
+
+	include ("DATA/header_open.php");
 	
+	include ("DATA/header_close.php");
 	//Confirm Message
-	echo 'Successfully registered';
+	echo 'Successfully registered! <a href="login.php">Login</a>to post to the forum!' ;
+	
+	include ("DATA/footer.php");
 	
 	}
 	?>

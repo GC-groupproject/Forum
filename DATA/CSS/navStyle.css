@@ -79,3 +79,19 @@ nav a:visited
 	float:right;
 	top:5px;
 }
+
+#user
+{
+	padding-top:0;
+	float:right;
+	width:200px;
+	position:relative;
+}
+nav p
+{
+	margin:0px;
+}
+#user p
+{
+	display:inline-block;
+}

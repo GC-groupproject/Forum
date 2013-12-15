@@ -5,9 +5,11 @@
 		$loginFail = true; // initialise login success
 		include('DATA/JavaScripts/logCheck.php'); // script to manage login
 		
-		if(login($_POST['username'],$_POST['password']))
+		$login = login($_POST['username'],$_POST['password']);
+		if($login !== FALSE)
 		{
 			$_SESSION['username'] = $_POST['username']; // user logged in successfully set username session
+			$_SESSION['user_id'] = $login; // user logged in successfully set username session
 			$_SESSION[KEYNAME] = KEY;
 			$loginFail = false; // login failed set fail notice
 		}
@@ -18,7 +20,7 @@
 	include ("DATA/header_close.php");
 ?>
 <?php	
-	if(!isset($_SESSION['username']) && (!isset($loginFail) || $loginFail))
+	if($_SESSION['user_id'] == ANONUSER && (!isset($loginFail) || $loginFail))
 	{
 ?>    
 		<!-- Login Form -->
@@ -29,16 +31,17 @@
                 <input type="text" autofocus autocomplete="on" name="username"><br>
                 <label for="password">Password:</label>
                 <input type="password" autocomplete="on" name="password"><br>
-                <input type="submit" name="submit" value="Submit" />
+                <input  class="button" type="submit" name="submit" value="Submit" />
             </div>
         </form>
     
 <?php
 	}
-	if(isset($_SESSION['username']) || (isset($loginFail) && !$loginFail))
+	if($_SESSION['user_id'] != ANONUSER || (isset($loginFail) && !$loginFail))
 	{
 ?>
-	<p style="color:green; display:block; text-align:center;">Logged In Successfully</p>
+	<p style="color:green; display:block; text-align:center;">Logged In Successfully! You can now <a href="add_topic">add</a> a topic!</p>
+    <a href="logout.php">Log Out</a>
 <?php
 	}
 ?>
