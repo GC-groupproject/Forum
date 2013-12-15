@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
+<<<<<<< HEAD
 <file name="navStyle.css" server="webdesign4.georgianc.on.ca//public_html/" local="130305903744829074" remote="130306083600000000" Dst="1" />
+=======
+<file name="navStyle.css" server="webdesign4.georgianc.on.ca//public_html/" local="130305903309297525" remote="130306083000000000" Dst="1" />
+<file name="mainTheme.css" server="webdesign4.georgianc.on.ca/public_html/" local="130308478575393540" remote="130308658200000000" Dst="1" />
+<file name="navStyle.css" server="webdesign4.georgianc.on.ca/public_html/" local="130308399687225636" remote="130308579600000000" Dst="1" />
+<file name="postStyles.css" server="webdesign4.georgianc.on.ca/public_html/" local="130308732342062633" remote="130308912000000000" Dst="1" />
+<file name="footerStyle.css" server="webdesign4.georgianc.on.ca/public_html/" local="130308392814891857" remote="130308572400000000" Dst="1" />
+<file name="mobileNav.css" server="webdesign4.georgianc.on.ca/public_html/" local="130308737294536321" remote="130308916800000000" Dst="1" />
+<file name="mobileFooter.css" server="webdesign4.georgianc.on.ca/public_html/" local="130308742583679477" remote="130308922200000000" Dst="1" />
+<file name="mobileTheme.css" server="webdesign4.georgianc.on.ca/public_html/" local="130308750539167004" remote="130308930000000000" Dst="1" />
+<file name="mobilePost.css" server="webdesign4.georgianc.on.ca/public_html/" local="130308744125467782" remote="130308924000000000" Dst="1" />
+>>>>>>> origin/test
 </dwsync>

@@ -1,4 +1,5 @@
 /* CSS Document */
+<<<<<<< HEAD
 html
 {
 	margin:0;
@@ -49,22 +50,69 @@ nav ul
 	border-bottom-right-radius:75px 5px;
 	top:-18px;
 	height:55px;
+=======
+.nav_link
+{
+	list-style:none;
+	display:inline-block;	
+}
+.nav_link a:hover
+{
+	background:#666;
+}
+nav
+{
+	display:block;	
+	position:fixed;
+	background: #222;
+	border-bottom-left-radius:75px 5px;
+	border-bottom-right-radius:75px 5px;
+	top:0px;
+	width:100%;
+	height:35px;
+>>>>>>> origin/test
 	z-index:10;
 	padding-top:5px;
 	padding-bottom:5px;
 }
+<<<<<<< HEAD
+=======
+nav ul
+{
+	position:relative;
+	top:-18px;
+}
+>>>>>>> origin/test
 nav a
 {
 	text-decoration:none;
 	color:white;
 	display:block;
+<<<<<<< HEAD
 	width:100%;
 }
 a:visited
+=======
+	padding:10px;
+	text-align:center;
+	
+	border-bottom-left-radius:3px;
+	border-bottom-right-radius:3px;
+	-webkit-transition: all 300ms ease-in;
+	-moz-transition: all 300ms ease-in;
+	-ms-transition: all 300ms ease-in;
+	-o-transition: all 300ms ease-in;
+	transition: all 300ms ease-in;
+	
+}
+
+nav a:visited
+>>>>>>> origin/test
 {
 	text-decoration:none;
 	color:white;
 }
+<<<<<<< HEAD
 .first
 {
 	color: white;
@@ -138,6 +186,8 @@ nav span
 	visibility:visible;
 }
 
+=======
+>>>>>>> origin/test
 #myLogo
 {
 	display:inline-block;
@@ -167,7 +217,10 @@ nav span
 	float:right;
 	top:5px;
 }
+<<<<<<< HEAD
 #section p
 {
 	font-size:18px
 }
+=======
+>>>>>>> origin/test
