@@ -2,38 +2,12 @@
 	include("DATA/header_open.php");
 ?>
 	<title>Forum - Topic Board</title>
-<<<<<<< HEAD
-=======
     <link href="DATA/CSS/postStyles.css" rel="stylesheet" type="text/css"/>
->>>>>>> origin/test
 <?php
 	include("DATA/header_close.php");
 ?>
 	<h1 class="header">Topic Board</h1>
 	<div>
-<<<<<<< HEAD
-		<?php /*
-			$query 	= "SELECT * FROM topics";
-			$result = $db->query($query);
-
-			foreach($result as $row)
-			{
-				?>
-					<div class="topic">
-						<p class="topic_head">
-							<?php echo $row['header']; ?>
-						</p>
-						<p class="topic_owner">
-							<?php 
-								$userID 	= $row['ownerID'];
-								$query 		= "SELECT username FROM users WHERE userid = " . $userID;
-								$resultTwo	= $db->query($query);
-								if($resultTwo->rowCount > 0)
-								{
-									foreach($resultTwo as $rowTwo)
-									{
-										echo $rowTwo['username'];
-=======
 		<?php 
 			// build initial query to get total number of rows
 			$query 	= "SELECT * FROM forum_titles ORDER BY topic_date, last_post_date DESC";
@@ -77,11 +51,25 @@
 			foreach($result as $row)
 			{
 				?>
-                <a href="topic_discussion.php?topic=<?php echo $row['title_id']; ?>" >
+                <a href="topic_discussion.php?topic=<?php echo $row['title_id']; ?>" class='topic_wrap' >
 					<div class="topic">
 						<h2 class="topic_head">
 							<?php echo $row['title']; ?>
 						</h2>
+                        <div class='user_image'>
+                            <img src='<?php
+                                $query =  "SELECT user_image FROM forum_user_info WHERE user_id = ?";
+                                $result2 = $db->prepare($query);
+                                $result2->execute(array($post_userID));
+                                if($result2->rowCount() > 0)
+                                {
+                                    foreach($result2 as $row2)
+                                    {
+                                        echo $row2['user_image'];
+                                    }
+                                }
+                            ?>' alt="user image" onerror="this.src='DATA/UserImages/anon.png';" />
+                        </div>
 						<p class="topic_owner">
 							<?php 
 								$userID 	= $row['user_id'];
@@ -91,37 +79,53 @@
 								{
 									foreach($resultTwo as $rowTwo)
 									{
-										echo $rowTwo['user_name'];
->>>>>>> origin/test
+										echo 'Created By: ' . $rowTwo['user_name'];
 									}
 								}
-								else
-								{
-<<<<<<< HEAD
-=======
-									echo $query;
->>>>>>> origin/test
-									exit();
-								}	
 							?>
 						</p>
 						<p class="topic_created">
-<<<<<<< HEAD
-							<?php echo $row['date_created']; ?>							
-						</p>
-					</div>
-				<?php
-			} */
-		?>
-=======
-							<?php echo $row['topic_date']; ?>							
-						</p>
+                            <?php
+								$date = date_parse($row['topic_date']);
+								date_default_timezone_set('UTC');
+								$today = date("Y/m/d");
+								$postDate = $date['year'].'/'.$date['month'].'/'.$date['day'];
+								if($today != $postDate)
+								{
+									$extendedDate = $postDate;
+								}
+								printf('Created: %02d:%02d %d/%02d/%02d',$date['hour'],$date['minute'],$date['month'],$date['day'],$date['year']);
+							?>						
+						</p><br>
 						<p class="last_user">
-							<?php echo $row['last_user_id']; ?>							
+							<?php 
+								$post_userID = $row['last_user_id']; 
+								$query =  "SELECT user_name FROM forum_users WHERE user_id = ?";
+                                $result2 = $db->prepare($query);
+                                $result2->execute(array($post_userID));
+                                if($result2->rowCount() > 0)
+                                {
+                                    foreach($result2 as $row2)
+                                    {
+                                        echo 'Last Post By: ' . $row2['user_name'];
+                                    }
+                                }
+							?>
 						</p>
-						<p class="last_post">
-							<?php echo $row['last_post_date']; ?>							
-						</p>
+                        
+                        <p class-'last_post'>
+                        	<?php
+								$date = date_parse($row['last_post_date']);
+								date_default_timezone_set('UTC');
+								$today = date("Y/m/d");
+								$postDate = $date['year'].'/'.$date['month'].'/'.$date['day'];
+								if($today != $postDate)
+								{
+									$extendedDate = $postDate;
+								}
+								printf('Last Post: %02d:%02d %d/%02d/%02d',$date['hour'],$date['minute'],$date['month'],$date['day'],$date['year']);
+							?>
+                        </p>
 					</div>
                 </a>
 				<?php
@@ -142,7 +146,6 @@
 			}
 		}
 		?>        
->>>>>>> origin/test
 	</div>
 <?php
 	include("DATA/footer.php");

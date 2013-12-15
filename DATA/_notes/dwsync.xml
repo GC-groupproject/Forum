@@ -4,17 +4,13 @@
 <file name="GLOBALS.php" server="webdesign4.georgianc.on.ca//public_html/" local="130305757542783835" remote="130306072200000000" Dst="1" />
 <file name="header_close.php" server="webdesign4.georgianc.on.ca//public_html/" local="130305898913607335" remote="130306079400000000" Dst="1" />
 <file name="header_open.php" server="webdesign4.georgianc.on.ca//public_html/" local="130305897021803888" remote="130306077000000000" Dst="1" />
-<<<<<<< HEAD
-=======
-<file name="navMenu.php" server="webdesign4.georgianc.on.ca/public_html/" local="130308397337360784" remote="130308577800000000" Dst="1" />
-<file name="header_close.php" server="webdesign4.georgianc.on.ca/public_html/" local="130306021286043241" remote="130306201200000000" Dst="1" />
-<file name="header_open.php" server="webdesign4.georgianc.on.ca/public_html/" local="130308739275260071" remote="130308919200000000" Dst="1" />
-<file name="header_open.php~" server="webdesign4.georgianc.on.ca/public_html/" local="130305964200000000" remote="130305964200000000" Dst="1" />
-<file name="header_close.php~" server="webdesign4.georgianc.on.ca/public_html/" local="130305964200000000" remote="130305964200000000" Dst="1" />
-<file name="GLOBALS.php~" server="webdesign4.georgianc.on.ca/public_html/" local="130305964200000000" remote="130305964200000000" Dst="1" />
-<file name="GLOBALS.php" server="webdesign4.georgianc.on.ca/public_html/" local="130308357949463570" remote="130308547800000000" Dst="1" />
-<file name="footer.php" server="webdesign4.georgianc.on.ca/public_html/" local="130308389103419003" remote="130308568800000000" Dst="1" />
-<file name="replyBox.php" server="webdesign4.georgianc.on.ca/public_html/" local="130308665370315277" remote="130308844800000000" Dst="1" />
-<file name="parseText.php" server="webdesign4.georgianc.on.ca/public_html/" local="130308707700360908" remote="130308887400000000" Dst="1" />
->>>>>>> origin/test
+<file name="navMenu.php" server="webdesign4.georgianc.on.ca/public_html/" local="130314733800000000" remote="130314733800000000" Dst="1" />
+<file name="footer.php" server="webdesign4.georgianc.on.ca/public_html/" local="130314570061669376" remote="130314750000000000" Dst="1" />
+<file name="GLOBALS.php" server="webdesign4.georgianc.on.ca/public_html/" local="130308547800000000" remote="130308547800000000" Dst="1" />
+<file name="header_close.php" server="webdesign4.georgianc.on.ca/public_html/" local="130306201200000000" remote="130306201200000000" Dst="1" />
+<file name="header_open.php" server="webdesign4.georgianc.on.ca/public_html/" local="130315119140763267" remote="130315299000000000" Dst="1" />
+<file name="parseText.php" server="webdesign4.georgianc.on.ca/public_html/" local="130308887400000000" remote="130308887400000000" Dst="1" />
+<file name="replyBox.php" server="webdesign4.georgianc.on.ca/public_html/" local="130314326529493198" remote="130314506400000000" Dst="1" />
+<file name="securePost.php" server="webdesign4.georgianc.on.ca/public_html/" local="130314368217200454" remote="130314547800000000" Dst="1" />
+<file name="checkPost.php" server="webdesign4.georgianc.on.ca/public_html/" local="130314332727408072" remote="130314512400000000" Dst="1" />
 </dwsync>

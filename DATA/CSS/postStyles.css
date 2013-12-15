@@ -51,6 +51,8 @@
 .topic p
 {
 	display:inline-block;
+	margin-left: 10px;
+	margin-right:10px;
 }
 .user_image
 {
@@ -73,6 +75,17 @@
 	-webkit-hyphens: auto;
    	-moz-hyphens: auto;
     hyphens: auto;
+	overflow:scroll;
+	overflow-y:hidden;
+}
+.post_time
+{
+	display:block;
+}
+.topic_wrap
+{
+	text-decoration:none;
+	color:#000;
 }
 .content_wrapper
 {
@@ -82,9 +95,19 @@
 {
 	float:right;
 }
+#dialog-confirm
+{
+	display:none;
+}
 .submit
 {
 	float:right;
+}
+.captch
+{
+	width:300px;
+	margin-left:auto;
+	margin-right:auto;
 }
 @media (max-width: 1188px) {
 	.post_text
