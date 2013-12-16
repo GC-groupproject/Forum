@@ -1,3 +1,7 @@
+<!--update.php-->
+<!--Author's: Jean-Luc Desroches, Alex barbosa, Durwin Barcenas -->
+<!--Forum-->
+<!--This is our update page for editing a user-->
 <?php
 		
 		include('DATA/GLOBALS.php');
@@ -35,7 +39,7 @@ $conn = mysqli_connect('webdesign4.georgianc.on.ca', 'db200176338', '99939', 'db
 		}
 		$data['userimage'] = isset($target)?"user_image = '$target'":null;
 		$data = array_filter($data);
-		
+		//if statement to update forum user info with new info
 		$updates = implode(', ',$data);
 	if (is_numeric($id) && !empty($updates)) {
 		

@@ -1,4 +1,7 @@
-
+<!--logout.php-->
+<!--Author's: Jean-Luc Desroches, Alex barbosa, Durwin Barcenas -->
+<!--Forum-->
+<!--This file is our logout page that redirects you to login when you logout-->
 
 <?php
 

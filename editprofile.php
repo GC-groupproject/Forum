@@ -1,3 +1,7 @@
+<!--editprofile.php-->
+<!--Author's: Jean-Luc Desroches, Alex barbosa, Durwin Barcenas -->
+<!--Forum-->
+<!--This file is the edit profile page-->
 <?php
 	// Open header and set any specific files for this pages
 	include("DATA/header_open.php");
@@ -19,6 +23,7 @@ if(isset($_POST['save']))
 	include('DATA/update.php');
 			
 }
+//connect to database
 $conn = mysqli_connect('webdesign4.georgianc.on.ca', 'db200176338', '99939', 'db200176338') or die(mysqli_error());
 
   $sql = "SELECT * FROM forum_user_info WHERE user_id = {$_SESSION['user_id']}";
@@ -54,6 +59,7 @@ mysqli_close($conn);
 	<input name="birthdate" value="<?php echo $birthdate; ?>" type="date" />
 </div>
 <div>
+	
 	<label for="country"><p class="required">*</p>Select Country</label>
       	<select name="country" required="required" >
             <option value="">Country...</option>

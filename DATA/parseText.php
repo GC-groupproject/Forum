@@ -1,3 +1,7 @@
+<!--parseText.php-->
+<!--Author's: Jean-Luc Desroches, Alex barbosa, Durwin Barcenas -->
+<!--Forum-->
+<!--This is our parse text file-->
 <?php
 function parseText($text)
 {

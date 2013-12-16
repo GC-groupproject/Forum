@@ -1,3 +1,7 @@
+<!--login.php-->
+<!--Author's: Jean-Luc Desroches, Alex barbosa, Durwin Barcenas -->
+<!--Forum-->
+<!--This file is our login page-->
 <?php
 	include ("DATA/header_open.php");
 		if(!empty($_POST['password']) && !empty($_POST['username']))

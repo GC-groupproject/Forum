@@ -1,3 +1,7 @@
+<!--updateTopic.php-->
+<!--Author's: Jean-Luc Desroches, Alex barbosa, Durwin Barcenas -->
+<!--Forum-->
+<!--This page updates topics-->
 <?php
 //Author: Durwin Barcenas
 //Date: December 12, 2013

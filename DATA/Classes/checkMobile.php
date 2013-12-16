@@ -1,3 +1,7 @@
+<!--Checkmobile.php-->
+<!--Author's: Jean-Luc Desroches, Alex barbosa, Durwin Barcenas -->
+<!--Forum-->
+<!--This file checks if the browser used is mobile or desktop-->
 <?php
 /**
 check the browser user agent string for mobile browser keywords

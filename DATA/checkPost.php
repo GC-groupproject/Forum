@@ -1,3 +1,7 @@
+<!--checkPost.php-->
+<!--Author's: Jean-Luc Desroches, Alex barbosa, Durwin Barcenas -->
+<!--Forum-->
+<!--This file checks the users post-->
 <?php
 	function CAPTCHA($captchaID, $captchaname)
 	{

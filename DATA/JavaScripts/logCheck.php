@@ -1,3 +1,7 @@
+<!--logcheck.php-->
+<!--Author's: Jean-Luc Desroches, Alex barbosa, Durwin Barcenas -->
+<!--Forum-->
+<!--This file is the validation and hashes the password for login-->
 <?php
 	function login($username, $password)
 	{

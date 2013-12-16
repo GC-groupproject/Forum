@@ -1,3 +1,7 @@
+<!--deleteTopic.php-->
+<!--Author's: Jean-Luc Desroches, Alex barbosa, Durwin Barcenas -->
+<!--Forum-->
+<!--This page is used to delete topics tables and posts from topics-->
 <?php
 	$topicID = $_POST['topicID'];
 	include('/home/200176338/public_html/AdvancedWebProgrammingClass/Forum/DATA/GLOBALS.php');

@@ -1,3 +1,7 @@
+<!--saveuser.php-->
+<!--Author's: Jean-Luc Desroches, Alex barbosa, Durwin Barcenas -->
+<!--Forum-->
+<!--This file validates our signup page-->
 	<?php
 	
 	

@@ -1,3 +1,7 @@
+<!--signup.php-->
+<!--author's: Jean-Luc Desroches, Alex barbosa, Durwin Barcenas -->
+<!--Forum-->
+<!--This file is our signup page-->
 <?php
 include ("DATA/header_open.php");
 ?>
@@ -13,6 +17,7 @@ if(isset($_POST['signup']))
 	include ("DATA/saveuser.php");
 }
 ?>
+<!--html/php-->
 <form enctype="multipart/form-data" id="signup" method="post" action="<?php $_SERVER['PHP_SELF'] ?>">
 
     <label for="firstname" >First name:</label>

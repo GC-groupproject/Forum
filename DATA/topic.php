@@ -1,3 +1,7 @@
+<!--topic.php-->
+<!--Author's: Jean-Luc Desroches, Alex barbosa, Durwin Barcenas -->
+<!--Forum-->
+<!--This is our topics page-->
 <?php
 	// Start the session
 	require_once('DATA/startsession.php');

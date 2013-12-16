@@ -1,3 +1,7 @@
+<!--contactpage.php-->
+<!--Author's: Jean-Luc Desroches, Alex barbosa, Durwin Barcenas -->
+<!--Forum-->
+<!--This is our contact page -->
 <?php
 include ("DATA/header_open.php");
 ?>
@@ -7,7 +11,6 @@ include ("DATA/header_open.php");
 	include ("DATA/header_close.php");
 ?>
 <!--Contact Page content made by Durwin Barcenas-->
-<h1 class="header">Contact Page</h1>
 <div id="contactWrapper">
 <section>
 <h2>Contact Us</h2>

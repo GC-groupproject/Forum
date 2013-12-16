@@ -1,3 +1,7 @@
+<!--index.php-->
+<!--Author's: Jean-Luc Desroches, Alex barbosa, Durwin Barcenas -->
+<!--Forum-->
+<!--This is our main page for our forum-->
 <?php
 	include("DATA/header_open.php");
 ?>

@@ -1,3 +1,7 @@
+<!--navMenu.php-->
+<!--Author's: Jean-Luc Desroches, Alex barbosa, Durwin Barcenas -->
+<!--Forum-->
+<!--This file is our nav menu -->
 <nav>
     <ul>
         <li class="nav_link"><a href="index.php">Home</a></li>		

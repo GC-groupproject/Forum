@@ -1,7 +1,12 @@
+<!--securePost.php-->
+<!--Author's: Jean-Luc Desroches, Alex barbosa, Durwin Barcenas -->
+<!--Forum-->
+<!--This file  secures our post for only humans to post-->
 <h1 class="header">Human Verification</h1>
 <form action="<?php echo $_SERVER['PHP_SELF']."?topic=".$topicID."&page=".$curPage; ?>" method="post">
-	<p>You are not logged in, to post please complete CAPTHA</p>
+	<p>You are not logged in, to post please complete CAPTCHA</p>
 	<?php
+		//captcha box options 
 			$subCount++;
             echo '<div class="captchabox">';
             $rand = rand(0,21);

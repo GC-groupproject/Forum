@@ -1,3 +1,7 @@
+<!--removePost.php-->
+<!--Author's: Jean-Luc Desroches, Alex barbosa, Durwin Barcenas -->
+<!--Forum-->
+<!--This file removes posts for topic-->
 <?php
 	include("../GLOBALS.php");
 	$post_id = $_POST['postID'];

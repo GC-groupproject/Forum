@@ -1,7 +1,11 @@
+<!--add_topic.php-->
+<!--Author's: Jean-Luc Desroches, Alex barbosa, Durwin Barcenas -->
+<!--Forum-->
+<!--This is our add topic page-->
 <?php
 	include("DATA/header_open.php");
 ?>
-	<title>Forum - Add New Topic Board</title>
+	<title>Forum - Add New Topic Discussion</title>
     <link href="DATA/CSS/postStyles.css" rel="stylesheet" type="text/css"/>
 <?php
 	include("DATA/header_close.php");
@@ -10,7 +14,7 @@
 ?>
 
 <!--Add New Topic Page content made by Durwin Barcenas-->
-	<h1 class="header">Add New Topic Board</h1>
+	<h1 class="header">Add New Topic Discussion</h1>
 	<div>
 		<form method='post' action='<?php $_SERVER['PHP_SELF'] ?>'>
 				<input type='hidden' value='allowed' name='check' />

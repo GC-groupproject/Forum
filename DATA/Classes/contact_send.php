@@ -1,3 +1,8 @@
+<!--Contact_send.php-->
+<!--Author's: Jean-Luc Desroches, Alex barbosa, Durwin Barcenas -->
+<!--Forum-->
+<!--This page is the contact send page-->
+
 <?php
 //Author: Durwin Barcenas
 //Date: December 12, 2013

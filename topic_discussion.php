@@ -1,3 +1,7 @@
+<!--topicDiscussion.php-->
+<!--Author's: Jean-Luc Desroches, Alex barbosa, Durwin Barcenas -->
+<!--Forum-->
+<!--This file is our topic discussion page-->
 <?php
 	// Open header and set any specific files for this pages
 	include("DATA/header_open.php");

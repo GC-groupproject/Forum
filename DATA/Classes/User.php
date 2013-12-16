@@ -1,3 +1,7 @@
+<!--User.php-->
+<!--Author's: Jean-Luc Desroches, Alex barbosa, Durwin Barcenas -->
+<!--Forum-->
+<!--This is a page that uses functions for logging in-->
 <?php
 require_once('DATA/GLOBALS.php');
 

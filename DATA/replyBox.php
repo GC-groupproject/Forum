@@ -1,3 +1,7 @@
+<!--replyBox.php-->
+<!--Author's: Jean-Luc Desroches, Alex barbosa, Durwin Barcenas -->
+<!--Forum-->
+<!--This file displays our reply box-->
 <?php
 	$topicID = $_POST['topicID'];
 	$endPage = $_POST['endPage'];
