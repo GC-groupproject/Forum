@@ -52,10 +52,10 @@
 		$username = $_POST['username'];
 	
 		//Sql statement to add a new user
-		$sql = "INSERT INTO forum_user_info (first_name, last_name, birthdate, user_image) VALUES
-			('$_POST[firstname]','$_POST[lastname]' , '$_POST[birthdate]', '$_POST[user_image]'";
+		$sql = "INSERT INTO forum_user_info (first_name, last_name, birthdate, user_image, Country) VALUES
+			('{$_POST['firstname']}','{$_POST['lastname']}' , '{$_POST['birthdate']}', '{$_POST['user_image']}','{$_POST['country']}'";
 		$sql1 = "INSERT INTO forum_users (user_name, user_password) VALUES
-			('$_POST[username]', AES_ENCRYPT('".$password."',SHA('".$username.$password."Omega13"."')))";
+			('{$_POST['username']}', AES_ENCRYPT('".$password."',SHA('".$username.$password."Omega13"."')))";
 			
 			
 			

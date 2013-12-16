@@ -99,6 +99,10 @@
 {
 	display:none;
 }
+#post-dialog-confirm
+{
+	display:none;
+}
 .submit
 {
 	float:right;

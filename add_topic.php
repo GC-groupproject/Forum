@@ -5,12 +5,14 @@
     <link href="DATA/CSS/postStyles.css" rel="stylesheet" type="text/css"/>
 <?php
 	include("DATA/header_close.php");
+	if(!isset($_POST['content']))
+	{
 ?>
 
 <!--Add New Topic Page content made by Durwin Barcenas-->
 	<h1 class="header">Add New Topic Board</h1>
 	<div>
-		<form method='post' action='DATA/Classes/updateTopic.php'>
+		<form method='post' action='<?php $_SERVER['PHP_SELF'] ?>'>
 				<input type='hidden' value='allowed' name='check' />
 				<input type='hidden' value='add' name='mode' />
 				<table>
@@ -32,5 +34,10 @@
 	</div>
 	<!--End of New Topic Page-->
 <?php
+	}
+	else
+	{
+		include('DATA/Classes/updateTopic.php');
+	}
 	include("DATA/footer.php");
 ?>

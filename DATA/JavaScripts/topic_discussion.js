@@ -74,5 +74,36 @@ $(window).load(function(e) {
 		  	}
 		});
 	});
-	
+	$(document).on("click","#removePost", function(){ 
+		var $this = $(this);
+		$("#post-dialog-confirm").dialog({
+			resizable: false,
+		  	height:300,
+			width:400,
+		  	modal: true,
+		  	buttons: {
+				"Delete post?": function() {
+					var post 	= $("#removePost").attr('post');
+					var topic 	= $("#removePost").attr('topic');
+			  		$.ajax({
+						type: "POST",
+						url: 'DATA/Classes/removePost.php',
+						data: {postID:post},
+						dataType:"html",
+						success: function(data)
+						{
+							window.open("http://webdesign4.georgianc.on.ca/~200176338/AdvancedWebProgrammingClass/Forum/topic_discussion.php?topic=" + topic,"_self");
+						},
+						failure: function()
+						{
+							alert("error");
+						}
+					});
+				},
+				Cancel: function() {
+			  		$( this ).dialog( "close" );
+				}
+		  	}
+		});
+	});
 });

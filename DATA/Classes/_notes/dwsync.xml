@@ -4,5 +4,6 @@
 <file name="User.php" server="webdesign4.georgianc.on.ca/public_html/" local="130308511800000000" remote="130308511800000000" Dst="1" />
 <file name="contact_send.php" server="webdesign4.georgianc.on.ca/public_html/" local="130315230000000000" remote="130315230000000000" Dst="1" />
 <file name="deleteTopic.php" server="webdesign4.georgianc.on.ca/public_html/" local="130314713353705225" remote="130314892800000000" Dst="1" />
-<file name="updateTopic.php" server="webdesign4.georgianc.on.ca/public_html/" local="130315587000000000" remote="130315587000000000" Dst="1" />
+<file name="updateTopic.php" server="webdesign4.georgianc.on.ca/public_html/" local="130315678210000000" remote="130315858200000000" Dst="1" />
+<file name="removePost.php" server="webdesign4.georgianc.on.ca/public_html/" local="130316121660767207" remote="130316301600000000" Dst="1" />
 </dwsync>

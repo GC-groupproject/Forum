@@ -15,7 +15,7 @@
 		}
 	}
 ?>
-    
+    <title>Forum - Login</title>
 <?php
 	include ("DATA/header_close.php");
 ?>
@@ -23,6 +23,7 @@
 	if($_SESSION['user_id'] == ANONUSER && (!isset($loginFail) || $loginFail))
 	{
 ?>    
+	<h1 class="header">Login</h1>
 		<!-- Login Form -->
     	<form action="<?php echo $_SERVER['PHP_SELF'] ?>" id="login" method="post">
         	<div>

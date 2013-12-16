@@ -4,14 +4,16 @@
 <file name="GLOBALS.php" server="webdesign4.georgianc.on.ca//public_html/" local="130305757542783835" remote="130306072200000000" Dst="1" />
 <file name="header_close.php" server="webdesign4.georgianc.on.ca//public_html/" local="130305898913607335" remote="130306079400000000" Dst="1" />
 <file name="header_open.php" server="webdesign4.georgianc.on.ca//public_html/" local="130305897021803888" remote="130306077000000000" Dst="1" />
-<file name="navMenu.php" server="webdesign4.georgianc.on.ca/public_html/" local="130315629859388449" remote="130315809600000000" Dst="1" />
+<file name="navMenu.php" server="webdesign4.georgianc.on.ca/public_html/" local="130315647010000000" remote="130315827000000000" Dst="1" />
 <file name="footer.php" server="webdesign4.georgianc.on.ca/public_html/" local="130314570061669376" remote="130314750000000000" Dst="1" />
 <file name="GLOBALS.php" server="webdesign4.georgianc.on.ca/public_html/" local="130308547800000000" remote="130308547800000000" Dst="1" />
 <file name="header_close.php" server="webdesign4.georgianc.on.ca/public_html/" local="130306201200000000" remote="130306201200000000" Dst="1" />
 <file name="header_open.php" server="webdesign4.georgianc.on.ca/public_html/" local="130315473269924642" remote="130315653000000000" Dst="1" />
 <file name="parseText.php" server="webdesign4.georgianc.on.ca/public_html/" local="130308887400000000" remote="130308887400000000" Dst="1" />
 <file name="replyBox.php" server="webdesign4.georgianc.on.ca/public_html/" local="130314326529493198" remote="130314506400000000" Dst="1" />
-<file name="securePost.php" server="webdesign4.georgianc.on.ca/public_html/" local="130314368217200454" remote="130314547800000000" Dst="1" />
+<file name="securePost.php" server="webdesign4.georgianc.on.ca/public_html/" local="130315642627399958" remote="130315822200000000" Dst="1" />
 <file name="checkPost.php" server="webdesign4.georgianc.on.ca/public_html/" local="130314332727408072" remote="130314512400000000" Dst="1" />
 <file name="topic.php" server="webdesign4.georgianc.on.ca/public_html/" local="130314754200000000" remote="130314754200000000" Dst="1" />
+<file name="saveuser.php" server="webdesign4.georgianc.on.ca/public_html/" local="130316237925379357" remote="130316417400000000" Dst="1" />
+<file name="update.php" server="webdesign4.georgianc.on.ca/public_html/" local="130316292273694654" remote="130316472000000000" Dst="1" />
 </dwsync>

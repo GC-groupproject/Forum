@@ -1,3 +1,4 @@
+<h1 class="header">Human Verification</h1>
 <form action="<?php echo $_SERVER['PHP_SELF']."?topic=".$topicID."&page=".$curPage; ?>" method="post">
 	<p>You are not logged in, to post please complete CAPTHA</p>
 	<?php

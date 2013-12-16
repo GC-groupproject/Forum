@@ -10,7 +10,7 @@
 	<div>
 		<?php 
 			// build initial query to get total number of rows
-			$query 	= "SELECT * FROM forum_titles ORDER BY topic_date, last_post_date DESC";
+			$query 	= "SELECT * FROM forum_titles ORDER BY last_post_date DESC";
 			$result = $db->query($query);
 			
 			// check requested page
@@ -44,12 +44,13 @@
 			$limitStatement = $curPage > 1? ("$limitSet , $limitsetEnd") : $limitSet;
 			
 			// get results from page request
-			$query 	= "SELECT * FROM forum_titles ORDER BY topic_date, last_post_date DESC LIMIT $limitStatement";
+			$query 	= "SELECT * FROM forum_titles ORDER BY last_post_date DESC LIMIT $limitStatement";
 			$result = $db->query($query);
 			
 			// loop through each row and set data
 			foreach($result as $row)
 			{
+				$userID 	= $row['user_id'];
 				?>
                 <a href="topic_discussion.php?topic=<?php echo $row['title_id']; ?>" class='topic_wrap' >
 					<div class="topic">
@@ -58,9 +59,10 @@
 						</h2>
                         <div class='user_image'>
                             <img src='<?php
-                                $query =  "SELECT user_image FROM forum_user_info WHERE user_id = ?";
+								// output users image
+                                $query =  "SELECT user_image FROM forum_user_info WHERE user_id = $userID";
                                 $result2 = $db->prepare($query);
-                                $result2->execute(array($post_userID));
+                                $result2->execute();
                                 if($result2->rowCount() > 0)
                                 {
                                     foreach($result2 as $row2)
@@ -72,7 +74,7 @@
                         </div>
 						<p class="topic_owner">
 							<?php 
-								$userID 	= $row['user_id'];
+								// get username from user table
 								$query 		= "SELECT user_name FROM forum_users WHERE user_id = " . $userID;
 								$resultTwo	= $db->query($query);
 								if($resultTwo->rowCount() > 0)
@@ -86,10 +88,11 @@
 						</p>
 						<p class="topic_created">
                             <?php
+								// Output topic creation date
 								$date = date_parse($row['topic_date']);
 								date_default_timezone_set('UTC');
 								$today = date("Y/m/d");
-								$postDate = $date['year'].'/'.$date['month'].'/'.$date['day'];
+								$postDate = $date['year'].'/'.$date['month'].'/'.$date['day']; // format date to string
 								if($today != $postDate)
 								{
 									$extendedDate = $postDate;
@@ -99,6 +102,7 @@
 						</p><br>
 						<p class="last_user">
 							<?php 
+								// output last username to post on the topic
 								$post_userID = $row['last_user_id']; 
 								$query =  "SELECT user_name FROM forum_users WHERE user_id = ?";
                                 $result2 = $db->prepare($query);
@@ -115,6 +119,7 @@
                         
                         <p class-'last_post'>
                         	<?php
+								// output last date topic was posted to
 								$date = date_parse($row['last_post_date']);
 								date_default_timezone_set('UTC');
 								$today = date("Y/m/d");
@@ -130,6 +135,7 @@
                 </a>
 				<?php
 			} 
+			// if more than one page exists output pagination control
 		if($pages > 1)
 		{
 			if($curPage != 1)

@@ -37,7 +37,7 @@
 	
 	if(isset($_POST['response']))
 	{
-		if($_SESSION['user_id'] == ANONUSER)
+		if($_SESSION['user_id'] == ANONUSER && !isset($_POST['words']))
 		{
 			include('DATA/securePost.php');
 			include('DATA/footer.php');
@@ -54,8 +54,9 @@
 			{
 				$subCount = 1;
 			}
-			if(CAPTCHA($_POST['id'],$_POST['words']))
+			if(CAPTCHA($_POST['id'],$_POST['words']) || $_SESSION['user_id'] != ANONUSER)
 			{
+				// CAPTCHA correct, create post
 				include('DATA/parseText.php');
 				$userID 		= $_SESSION['user_id'];
 				$text 			=  parseText($_POST['response']);				
@@ -77,6 +78,7 @@
 			}	
 			elseif($subCount < 3)
 			{
+				// if submissions are less than three output error, and have user try again
 				?>
                 <p class='error'>CAPTCHA not correct!</p>
                 <?php
@@ -86,6 +88,7 @@
 			}
 			else
 			{
+				// user has submitted post too many times
 				?>
                 <p class='error'>Post rejected. You entered the CAPTCHA in wrong too many times.</p>
                 <a href="<?php echo $_SERVER['PHP_SELF']."?topic=".$topicID."&page=".$curPage; ?>" ><button class="button">Back</button></a>
@@ -115,6 +118,7 @@
 			$curPage = 1;
 		}
 		
+		// create limit set for selection
 		$limitset 		= $curPage == 1? 10 : 10 * ($curPage-1);
 		$limitStatement = $curPage > 1? ("$limitset , 10") : $limitset;
 		
@@ -141,7 +145,8 @@
 		?>
         </h1>   
         <?php
-		if($row2['user_id'] == $_SESSION['user_id'])
+		$creatorid = $row2['user_id'];
+		if($creatorid == $_SESSION['user_id'])
 		{
 			?>
             	<button class="importantButton" id="deleteTopic" topic="<?php echo $topicID; ?>" >Delete Topic</button>
@@ -210,7 +215,22 @@
 								printf('%02d:%02d %d/%02d/%02d',$date['hour'],$date['minute'],$date['month'],$date['day'],$date['year']);
 							?>
                         </p>
+                        
                     </div>
+                    <?php
+							if($creatorid == $_SESSION['user_id'])
+							{
+								?>
+                                	<button class="importantButton" id="removePost" topic="<?php echo $topicID; ?>" post="<?php echo $row['post_id']; ?>" >Remove Post</button>
+                                    <div id="post-dialog-confirm" title="Delete Post?">
+                                        <p>
+                                            <span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>
+                                            This will remove this post, are you sure you wish to continue?
+                                        </p>
+                                    </div>
+                                <?php								
+							}
+						?>
 				</div>		
 				<?php
 			}// end of foreach

@@ -10,26 +10,30 @@
 
 <?php
 	if($_SESSION['user_id'] != ANONUSER)		
-	{
-	
-		$conn = mysqli_connect('webdesign4.georgianc.on.ca', 'db200176338', '99939', 'db200176338') or die(mysqli_error());
-		
-		  $sql = "SELECT * FROM forum_user_info";
-  		  $result = mysqli_query($conn, $sql) or die('Error querying database.');
-		  
-		  while ($row = mysqli_fetch_array($result)) {
-			$fname =  $row['first_name'];
-			$lname =  $row['last_name'];
-			$birthdate = $row['birthdate'];
-			$country = $row['Country'];
-			$image = $row['user_image'];
-				
-		} 
-		mysqli_close($conn);
-		
+	{		
 ?>
 <h1 class='header'>Manage Your Profile</h1>
-<form method="post" action="update.php">
+<?php
+if(isset($_POST['save']))
+{
+	include('DATA/update.php');
+			
+}
+$conn = mysqli_connect('webdesign4.georgianc.on.ca', 'db200176338', '99939', 'db200176338') or die(mysqli_error());
+
+  $sql = "SELECT * FROM forum_user_info WHERE user_id = {$_SESSION['user_id']}";
+  $result = mysqli_query($conn, $sql);
+  
+  $row = mysqli_fetch_array($result);
+	$fname =  $row['first_name'];
+	$lname =  $row['last_name'];
+	$birthdate = $row['birthdate'];
+	$country = $row['Country'];
+	$image = $row['user_image'];
+
+mysqli_close($conn);
+?>
+<form method="post" action="<?php $_SERVER['PHP_SELF'] ?>" enctype="multipart/form-data">
     
     <div>
 	<label>First name:</label>
@@ -39,10 +43,12 @@
 	<label>Last name:</label>
 	<input type="text" name="lastname" value="<?php echo $lname; ?>" />
 </div>
+
 <div>
 	<img src="<?php echo $image ?>" width="200" height="200" />
-	<input type="file" accept="image/*" />
+	<input type="file" accept="image/*" name="photo" />
 </div>
+
 <div>
 	<label>Birthdate: </label>
 	<input name="birthdate" value="<?php echo $birthdate; ?>" type="date" />
@@ -299,8 +305,8 @@
         </select>
 </div>
 
-	<input type="hidden" name="id" value="<?php echo $id; ?>" />
-	<input type="submit" value="Save" />
+	<input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>" />
+	<input type="submit" value="Save" name="save" />
     
     </form>
 <?php
