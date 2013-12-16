@@ -46,23 +46,55 @@
 	echo '<p class="error">Enter matching password.</p>';
 	$complete = false;
 	}
+	if(!empty($_FILES['photo']['name']))
+	{
+		if($_FILES['photo']['type'] == 'image/gif' || $_FILES['photo']['type'] == 'image/jpeg' || $_FILES['photo']['type'] == 'image/png' ||  $_FILES['photo']['type'] == 'image/bmp')
+		{
+			$user_image = $_FILES['photo']['name'];		
+			
+			//get the type of the file
+			$type = $_FILES['photo']['type'];
+			
+			//See where file gets uploaded to in cache
+			$temp_dir = $_FILES['photo']['tmp_name'];
+			
+			//set up a permanent directory path
+			$target = 'DATA/UserImages/' . basename($user_image);
+			
+			move_uploaded_file($temp_dir, $target);
+		}
+		else
+		{				
+			?>
+				<p class="error">Unsupported file format</p>
+			<?php
+		}
+	}
 	if ($complete) 	
 	{
 		$password = $_POST['password'];
 		$username = $_POST['username'];
 	
-		//Sql statement to add a new user
-		$sql = "INSERT INTO forum_user_info (first_name, last_name, birthdate, user_image, Country) VALUES
-			('{$_POST['firstname']}','{$_POST['lastname']}' , '{$_POST['birthdate']}', '{$_POST['user_image']}','{$_POST['country']}'";
-		$sql1 = "INSERT INTO forum_users (user_name, user_password) VALUES
+		//Sql statement to add a new user		
+		$sql = "INSERT INTO forum_users (user_name, user_password) VALUES
 			('{$_POST['username']}', AES_ENCRYPT('".$password."',SHA('".$username.$password."Omega13"."')))";
 			
-			
+		
 			
 			//Run the sql
 		mysqli_query($conn,$sql);
 		
-		mysqli_query($conn,$sql1);
+		$sql = "SELECT user_id FROM forum_users ORDER BY user_id DESC LIMIT 1";
+			
+			//Run the sql
+		$result = mysqli_query($conn,$sql);
+		$row = mysqli_fetch_array($result);
+		
+		$userid = $row['user_id'];
+		
+		$sql = "INSERT INTO forum_user_info (user_id, first_name, last_name, birthdate, user_image, Country) VALUES
+			($userid, '{$_POST['firstname']}','{$_POST['lastname']}' , '{$_POST['birthdate']}', '{$target}','{$_POST['country']}')";
+		mysqli_query($conn,$sql);
 			mysqli_close($conn);
 	
 		//Confirm Message
